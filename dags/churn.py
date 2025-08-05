@@ -8,9 +8,7 @@ import pandas as pd
 import numpy as np
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from steps.messages import send_telegram_success_message, send_telegram_failure_message
-
 @dag(
-    dag_id='churn',
     schedule='@once',
     start_date=pendulum.datetime(2023, 1, 1, tz="UTC"),
     catchup=False,
